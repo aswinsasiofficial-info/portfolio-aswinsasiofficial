@@ -439,27 +439,6 @@ body {
 }
 
 
-/* PROJECTS PAGE */
-.project-filters {
-    margin-bottom: 20px;
-}
-
-.filter-btn {
-    background: #0e0e0e;
-    color: white;
-    border: 1px solid #181818;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: white;
-    color: black;
-}
-
 /* PROJECT CARD */
 .project-modern-card {
     background: #0e0e0e;
@@ -507,14 +486,6 @@ body {
     border-radius: 20px;
     margin: 5px 5px 5px 0;
     font-size: 12px;
-}
-
-.project-item {
-    display: block;
-}
-
-.project-item.hide {
-    display: none;
 }
 
 /* PROJECT ACTION BUTTONS */
@@ -580,5 +551,3 @@ body {
     padding: 12px;
     border-radius: 25px;
 }
-
-/* project vids */
