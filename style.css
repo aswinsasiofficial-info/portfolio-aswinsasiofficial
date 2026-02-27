@@ -490,25 +490,55 @@ body {
     font-size: 12px;
 }
 
-.project-links {
-    margin-top: 15px;
-}
-
-.project-links a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-/* IMPORTANT FIX — visible by default */
 .project-item {
     display: block;
 }
 
-/* used if filtering enabled */
 .project-item.hide {
     display: none;
+}
+
+/* PROJECT ACTION BUTTONS */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    color: #fff;
+    background: #000;
+    transition: 0.25s;
+}
+
+.project-links a:hover {
+    border-color: #4da3ff;
+    color: #4da3ff;
+}
+
+.project-video {
+    border-color: #4da3ff;
+    color: #4da3ff;
+}
+
+.project-video:hover {
+    background: rgba(77, 163, 255, 0.1);
+}
+
+/* Mobile alignment */
+@media (max-width: 576px) {
+    .project-links {
+        justify-content: center;
+    }
 }
 
 
@@ -533,19 +563,3 @@ body {
 }
 
 /* project vids */
-.project-links a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-}
-
-.project-video {
-    color: #4da3ff;
-}
-
-.project-video:hover {
-    color: #7ab8ff;
-}
