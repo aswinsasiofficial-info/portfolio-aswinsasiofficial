@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfolio</title>
+    <title>Projects - Portfolio</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Devicons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,18 +18,22 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" data-aos="fade-down">
         <div class="container">
             <a class="navbar-brand" href="index.html">My Portfolio</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -49,7 +50,7 @@
         <section class="section-black">
             <div class="container">
 
-                <div class="section-header text-center">
+                <div class="section-header text-center" data-aos="fade-up">
                     <h2>My Projects</h2>
                     <div class="section-line"></div>
                     <p class="section-sub">A showcase of real-world work and creative solutions</p>
@@ -57,46 +58,100 @@
 
                 <div class="row">
 
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web">
+                    <!-- PROJECT 1 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-aos="fade-up">
                         <div class="project-modern-card">
                             <div class="project-info">
                                 <h4>E-Commerce Platform</h4>
-                                <p>Built a Django-based clothing e-commerce website with authentication, product
-                                    management, and responsive UI.</p>
+                                <p>Django-based clothing e-commerce website with authentication, product management, and
+                                    responsive UI.</p>
+
                                 <div class="project-links">
-                                    <a href="#"><i class="fab fa-github pe-2"></i>Source Code</a>
+                                    <a href="https://github.com/aswinsasiofficial-info/clothing-store" target="_blank"
+                                        class="btn btn-outline-dark rounded-pill">
+                                        <i class="fab fa-github pe-2"></i>Source Code
+                                    </a>
+
+                                    <a href="#" class="project-video btn btn-outline-dark rounded-pill"
+                                        data-video="videos/clothing-store.mp4">
+                                        <i class="fas fa-play-circle pe-2"></i>Watch Demo
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web">
+                    <!-- PROJECT 2 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-modern-card">
                             <div class="project-info">
                                 <h4>Sports Hub</h4>
                                 <p>Online platform to book sports venues with three-tier authentication and integrated
                                     payment processing.</p>
+
                                 <div class="project-links">
-                                    <a href="#"><i class="fab fa-github pe-2"></i>Source Code</a>
+                                    <a href="https://github.com/aswinsasiofficial-info/Sports-Hub" target="_blank"
+                                        class="btn btn-outline-dark rounded-pill">
+                                        <i class="fab fa-github pe-2"></i>Source Code
+                                    </a>
+
+                                    <a href="#" class="project-video btn btn-outline-dark rounded-pill"
+                                        data-video="videos/SportsHub.mp4">
+                                        <i class="fas fa-play-circle pe-2"></i>Watch Demo
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="mobile">
+                    <!-- PROJECT 3 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-modern-card">
                             <div class="project-info">
                                 <h4>Book Management App</h4>
-                                <p>Book store management system using Django to perform CRUD operations with search,
-                                    filtering, and responsive UI.</p>
+                                <p>Book store management system using Django with CRUD, search, filtering, and
+                                    responsive UI.</p>
+
                                 <div class="project-links">
-                                    <a href="#"><i class="fab fa-github pe-2"></i>Source Code</a>
+                                    <a href="https://github.com/aswinsasiofficial-info/Book-List-Management-System"
+                                        target="_blank" class="btn btn-outline-dark rounded-pill">
+                                        <i class="fab fa-github pe-2"></i>Source Code
+                                    </a>
+
+                                    <a href="#" class="project-video btn btn-outline-dark rounded-pill"
+                                        data-video="videos/Book Sys.mp4">
+                                        <i class="fas fa-play-circle pe-2"></i>Watch Demo
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
+                    <!-- PROJECT 4 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-modern-card">
+                            <div class="project-info">
+                                <h4>Fitness Tracker</h4>
+                                <p>Mobile app for health and activity tracking.</p>
 
+                                <div class="project-links">
+                                    <a href="https://github.com/yourrepo4" target="_blank"
+                                        class="btn btn-outline-dark rounded-pill">
+                                        <i class="fab fa-github pe-2"></i>Source Code
+                                    </a>
+
+                                    <a href="#" class="project-video btn btn-outline-dark rounded-pill"
+                                        data-video="videos/fitness.mp4">
+                                        <i class="fas fa-play-circle pe-2"></i>Watch Demo
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -104,22 +159,30 @@
 
     </main>
 
-    <footer class="footer-section" data-aos="fade-up">
-        <div class="container text-center">
-            <p class="mb-2">© 2026 All rights reserved.</p>
-
-            <div class="social-icons">
-                <a href="https://github.com/aswinsasiofficial-info"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/aswinsasi-info"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/qr/W6EC2IQ2IOCUE1"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/aswin__17?igsh=dWJjMXhkNHJyMDY2"><i class="fab fa-instagram"></i></a>
+    <!-- VIDEO MODAL -->
+    <div class="modal fade" id="videoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-body p-0">
+                    <video id="projectVideo" controls style="width:100%">
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-section text-center" data-aos="fade-up">
+        <div class="container">
+            <p>© 2026 All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script src="script.js"></script>
 
 </body>
 

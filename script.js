@@ -19,3 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Video Modal
+AOS.init({ duration: 1000, once: true });
+
+document.querySelectorAll(".project-video").forEach(btn => {
+    btn.addEventListener("click", e => {
+        e.preventDefault();
+        const src = btn.dataset.video;
+        const video = document.getElementById("projectVideo");
+        video.src = src;
+        new bootstrap.Modal(document.getElementById("videoModal")).show();
+    });
+});

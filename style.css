@@ -531,3 +531,21 @@ body {
     padding: 12px;
     border-radius: 25px;
 }
+
+/* project vids */
+.project-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.project-video {
+    color: #4da3ff;
+}
+
+.project-video:hover {
+    color: #7ab8ff;
+}
