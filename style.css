@@ -62,10 +62,11 @@ body {
         transform: translateX(-50%);
         width: auto;
         background: #0b0b0b;
-        border-radius: 12px;
-        border: 1px solid #181818;
+     border-radius: 12px;
         padding: 10px 14px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 10px 25px #000000;
+        border: 2px solid #aaa;
+        backdrop-filter: blur(13px);
     }
 
     .mobile-menu {
@@ -129,16 +130,39 @@ body {
     right: 30px;
     background: white;
     color: black;
-    padding: 10px 14px;
+    padding: 12px 15px;
     border-radius: 50%;
     cursor: pointer;
     display: none;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
     z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 18px;
 }
 
 .scroll-top:hover {
-    background: #ccc;
+    background: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll top position for mobile */
+@media (max-width: 768px) {
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 13px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 11px;
+        font-size: 14px;
+    }
 }
 
 /* ANIMATIONS */
