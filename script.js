@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Scroll to Top Button
     handleScrollToTop();
+    
+    // Typing Effect
+    initTypingEffect();
 });
 
 // Video Modal Functionality
@@ -131,4 +134,49 @@ function handleScrollToTop() {
             behavior: "smooth"
         });
     });
+}
+
+// Typing Effect Functionality
+function initTypingEffect() {
+    const textElement = document.getElementById('typing-text');
+    if (!textElement) return;
+    
+    const texts = ['Full Stack Developer', 'Web Developer'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
+    
+    function type() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            // Deleting text
+            textElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50; // Faster when deleting
+        } else {
+            // Typing text
+            textElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 80; // Normal typing speed
+        }
+        
+        // Check if word is complete
+        if (!isDeleting && charIndex === currentText.length) {
+            // Pause at end of word
+            typingSpeed = 1000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            // Move to next word
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typingSpeed = 250; // Pause before starting new word
+        }
+        
+        setTimeout(type, typingSpeed);
+    }
+    
+    // Start typing effect
+    setTimeout(type, 1000); // Initial delay
 }
