@@ -279,35 +279,17 @@ body {
 
 /* BUTTONS */
 .primary-btn {
-    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    background: white;
     color: black;
-    padding: 14px 32px;
+    padding: 12px 28px;
     border-radius: 30px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 15px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-    border: 2px solid transparent;
+    transition: 0.3s;
 }
 
 .primary-btn:hover {
-    background: linear-gradient(135deg, #f8f8f8, #e0e0e0);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-    color: #000;
-}
-
-.primary-btn:active {
-    transform: translateY(-2px);
-}
-
-.primary-btn i {
-    font-size: 16px;
+    background: #ccc;
+    transform: translateY(-3px);
 }
 
 .secondary-btn {
@@ -426,13 +408,6 @@ body {
 
     .hero-buttons {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    .primary-btn {
-        width: 100%;
-        padding: 13px 28px;
-        font-size: 14px;
     }
 }
 
