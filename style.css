@@ -374,9 +374,15 @@ body {
     font-size: 13px;
 }
 
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
 .project-actions a {
     color: white;
-    margin-right: 15px;
     text-decoration: none;
 }
 
@@ -530,7 +536,7 @@ body {
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     margin-top: 15px;
 }
 
