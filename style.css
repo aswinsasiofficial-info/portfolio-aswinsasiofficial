@@ -2,7 +2,7 @@
 body {
     background: #0a0a0a;
     color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     overflow-x: hidden;
 }
 
@@ -25,6 +25,12 @@ body {
     background: linear-gradient(90deg, #fff, #888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.navbar-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
 }
 
 .navbar-nav .nav-link {
@@ -504,8 +510,15 @@ body {
 }
 
 .skill-card i {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.skill-icon-img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 12px;
+    object-fit: contain;
 }
 
 .skill-card h5 {
@@ -556,7 +569,7 @@ body {
 .project-modern-card {
     background: #0e0e0e;
     border: 1px solid #181818;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     border-radius: 12px;
     overflow: hidden;
     transition: 0.3s ease;
