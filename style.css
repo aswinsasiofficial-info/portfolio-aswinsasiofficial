@@ -69,11 +69,24 @@ body {
         transform: translateX(-50%);
         width: 80%;
         background: #0b0b0b;
-     border-radius: 12px;
+        border-radius: 12px;
         padding: 10px 14px;
         box-shadow: 0 10px 25px #000000;
         border: 2px solid #aaa;
         backdrop-filter: blur(13px);
+        /* Smooth Transition */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: block !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        top: 85px;
     }
 
     .mobile-menu {

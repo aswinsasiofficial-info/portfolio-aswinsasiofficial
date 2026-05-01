@@ -18,7 +18,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Typing Effect
     initTypingEffect();
+
+    // Navbar Toggler Icon Change
+    handleNavbarIconToggle();
 });
+
+// Navbar Toggler Icon Toggle Functionality
+function handleNavbarIconToggle() {
+    const toggler = document.querySelector(".navbar-toggler");
+    const icon = toggler?.querySelector("i");
+    const collapse = document.getElementById("navbarNav");
+
+    if (!toggler || !icon || !collapse) return;
+
+    // Listen for Bootstrap collapse events
+    collapse.addEventListener("show.bs.collapse", () => {
+        icon.classList.replace("fa-bars-staggered", "fa-xmark");
+        icon.style.transform = "rotate(180deg)";
+        icon.style.transition = "all 0.3s ease";
+    });
+
+    collapse.addEventListener("hide.bs.collapse", () => {
+        icon.classList.replace("fa-xmark", "fa-bars-staggered");
+        icon.style.transform = "rotate(0deg)";
+    });
+}
 
 // Video Modal Functionality
 function handleVideoModal() {
