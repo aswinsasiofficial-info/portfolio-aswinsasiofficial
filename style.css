@@ -20,8 +20,9 @@ body {
 }
 
 .brand-text {
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 3px;
     background: linear-gradient(90deg, #fff, #888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -441,14 +442,16 @@ body {
 
 .project-actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 12px;
     margin-top: 15px;
+    overflow-x: auto;
 }
 
 .project-actions a {
     color: white;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 /* CTA */
