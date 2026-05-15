@@ -66,7 +66,7 @@ body {
         position: absolute;
         top: 75px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(-10px);
         width: 80%;
         background: #0b0b0b;
         border-radius: 12px;
@@ -75,18 +75,20 @@ body {
         border: 2px solid #aaa;
         backdrop-filter: blur(13px);
         /* Smooth Transition */
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: block !important;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+        will-change: transform, opacity;
     }
 
     .navbar-collapse.show {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        top: 85px;
+        top: 75px;
+        transform: translateX(-50%) translateY(10px);
     }
 
     .mobile-menu {

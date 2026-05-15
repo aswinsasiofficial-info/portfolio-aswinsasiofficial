@@ -31,11 +31,13 @@ function handleNavbarIconToggle() {
 
     if (!toggler || !icon || !collapse) return;
 
+    // Set initial transition for the icon
+    icon.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+
     // Listen for Bootstrap collapse events
     collapse.addEventListener("show.bs.collapse", () => {
         icon.classList.replace("fa-bars-staggered", "fa-xmark");
-        icon.style.transform = "rotate(180deg)";
-        icon.style.transition = "all 0.3s ease";
+        icon.style.transform = "rotate(90deg)";
     });
 
     collapse.addEventListener("hide.bs.collapse", () => {
