@@ -17,6 +17,7 @@ body {
     backdrop-filter: blur(10px);
     padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1040; /* Lift header above the backdrop dimmer (z-index: 1035) */
 }
 
 .brand-text {
@@ -26,6 +27,7 @@ body {
     background: linear-gradient(90deg, #fff, #888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-decoration: none;
 }
 
 .navbar-logo {
@@ -48,6 +50,8 @@ body {
 .custom-toggler {
     border: none;
     box-shadow: none;
+    z-index: 1050; /* Above the drawer and backdrop */
+    position: relative;
 }
 
 .custom-toggler:focus {
@@ -56,67 +60,121 @@ body {
 
 .custom-toggler i {
     color: #fff;
-    font-size: 24px;
+    font-size: 28px; /* Prominent size matching mockup close button */
 }
 
 /* ================= MOBILE NAVBAR BAR ================= */
 @media (max-width: 991px) {
 
-    .navbar-collapse {
-        position: absolute;
-        top: 75px;
-        left: 50%;
-        transform: translateX(-50%) translateY(-10px);
-        width: 80%;
-        background: #0b0b0b;
-        border-radius: 12px;
-        padding: 10px 14px;
-        box-shadow: 0 10px 25px #000000;
-        border: 2px solid #aaa;
-        backdrop-filter: blur(13px);
-        /* Smooth Transition */
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        display: block !important;
+
+
+    /* Backdrop / dimmer overlay toggled on body class */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(4px);
+        z-index: 1035; /* below the drawer */
         opacity: 0;
-        visibility: hidden;
         pointer-events: none;
-        will-change: transform, opacity;
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    body.nav-active::before {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    body.nav-active {
+        overflow: hidden; /* disable page scroll when open */
+    }
+
+    /* Slide-in right drawer */
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0;
+        right: -100%; /* offscreen by default */
+        height: 100vh;
+        width: 70%;
+        max-width: 380px;
+        background: #0d0d0d;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 80px 24px 40px 24px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1040;
     }
 
     .navbar-collapse.show {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        top: 75px;
-        transform: translateX(-50%) translateY(10px);
+        right: 0; /* slide in */
     }
 
     .mobile-menu {
         display: flex;
-        flex-direction: row;
-        gap: 18px;
+        flex-direction: column;
+        gap: 32px; /* generous vertical gap */
         align-items: center;
         justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-menu .nav-item {
+        width: 100%;
+        text-align: center;
     }
 
     .mobile-menu .nav-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 11px;
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 3px;
         color: #fff;
+        text-transform: uppercase;
         margin: 0;
-        padding: 6px 4px;
+        padding: 10px 0;
+        transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .mobile-menu .nav-link i {
-        font-size: 16px;
-        margin-bottom: 3px;
+        display: none; /* hide icons as per mockup */
     }
 
     .mobile-menu .nav-link:hover {
-        color: #4da3ff;
+        color: #ff4a57; /* highlight using the coral brand color */
+        transform: scale(1.05);
     }
+
+    /* Staggered fadeInUp entrance animation for menu links */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-collapse.show .mobile-menu .nav-item {
+        animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .navbar-collapse.show .mobile-menu .nav-item:nth-child(1) { animation-delay: 0.1s; }
+    .navbar-collapse.show .mobile-menu .nav-item:nth-child(2) { animation-delay: 0.15s; }
+    .navbar-collapse.show .mobile-menu .nav-item:nth-child(3) { animation-delay: 0.2s; }
+    .navbar-collapse.show .mobile-menu .nav-item:nth-child(4) { animation-delay: 0.25s; }
+    .navbar-collapse.show .mobile-menu .nav-item:nth-child(5) { animation-delay: 0.3s; }
 }
 
 /* ALERTS */

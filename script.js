@@ -38,11 +38,34 @@ function handleNavbarIconToggle() {
     collapse.addEventListener("show.bs.collapse", () => {
         icon.classList.replace("fa-bars-staggered", "fa-xmark");
         icon.style.transform = "rotate(90deg)";
+        document.body.classList.add("nav-active"); // Enable backdrop & prevent page scrolling
     });
 
     collapse.addEventListener("hide.bs.collapse", () => {
         icon.classList.replace("fa-xmark", "fa-bars-staggered");
         icon.style.transform = "rotate(0deg)";
+        document.body.classList.remove("nav-active"); // Disable backdrop & enable page scrolling
+    });
+
+    // Close menu when clicking outside (on the backdrop)
+    document.addEventListener("click", (e) => {
+        const isClickInsideMenu = collapse.contains(e.target);
+        const isClickOnToggler = toggler.contains(e.target);
+
+        if (!isClickInsideMenu && !isClickOnToggler && collapse.classList.contains("show")) {
+            const bsCollapse = bootstrap.Collapse.getInstance(collapse) || new bootstrap.Collapse(collapse, { toggle: false });
+            bsCollapse.hide();
+        }
+    });
+
+    // Close menu when clicking any link inside it
+    collapse.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+            if (bsCollapse) {
+                bsCollapse.hide();
+            }
+        });
     });
 }
 
