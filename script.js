@@ -36,13 +36,13 @@ function handleNavbarIconToggle() {
 
     // Listen for Bootstrap collapse events
     collapse.addEventListener("show.bs.collapse", () => {
-        icon.classList.replace("fa-bars-staggered", "fa-xmark");
+        icon.classList.replace("fa-bars", "fa-xmark");
         icon.style.transform = "rotate(90deg)";
         document.body.classList.add("nav-active"); // Enable backdrop & prevent page scrolling
     });
 
     collapse.addEventListener("hide.bs.collapse", () => {
-        icon.classList.replace("fa-xmark", "fa-bars-staggered");
+        icon.classList.replace("fa-xmark", "fa-bars");
         icon.style.transform = "rotate(0deg)";
         document.body.classList.remove("nav-active"); // Disable backdrop & enable page scrolling
     });
